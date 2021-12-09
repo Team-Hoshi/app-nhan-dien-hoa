@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             imageClassifier = new ImageClassifier(this);
         } catch (IOException e) {
-            Log.e("Image Classifier Error", "ERROR: " + e);
+            Log.e("Nhận diện ảnh thất bại", "ERROR: " + e);
         }
 
         btAdd.setOnClickListener(new View.OnClickListener() {
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
-                "Select photo from gallery",
-                "Capture photo from camera" };
+                "Chọn ảnh từ Thư viện",
+                "Chụp ảnh" };
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                     loadLV(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Toast.makeText(MainActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Thất bại !", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 withErrorListener(new PermissionRequestErrorListener() {
                     @Override
                     public void onError(DexterError error) {
-                        Toast.makeText(getApplicationContext(), "Some Error! ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Xảy ra lỗi !!! ", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .onSameThread()
