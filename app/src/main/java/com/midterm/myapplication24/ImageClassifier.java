@@ -119,13 +119,7 @@ public class ImageClassifier {
                 .build();
     }
 
-    /**
-     * method runs the inference and returns the classification results
-     *
-     * @param bitmap            the bitmap of the image
-     * @param sensorOrientation orientation of the camera
-     * @return classification results
-     */
+
     public List<Recognition> recognizeImage(final Bitmap bitmap, final int sensorOrientation) {
         List<Recognition> recognitions = new ArrayList<>();
 
@@ -146,13 +140,7 @@ public class ImageClassifier {
         return recognitions.subList(0, MAX_SIZE);
     }
 
-    /**
-     * loads the image into tensor input buffer and apply pre processing steps
-     *
-     * @param bitmap            the bit map to be loaded
-     * @param sensorOrientation the sensor orientation
-     * @return the image loaded tensor input buffer
-     */
+
     private TensorImage loadImage(Bitmap bitmap, int sensorOrientation) {
         // Loads bitmap into a TensorImage.
         inputImageBuffer.load(bitmap);
@@ -212,7 +200,7 @@ public class ImageClassifier {
         public String toString() {
             return "Recognition{" +
                     "name='" + name + '\'' +
-                    ", confidence=" + confidence +
+                    ", confidence=" + confidence*100 +
                     '}';
         }
 
