@@ -189,7 +189,7 @@ public class ImageClassifier {
 
         public Recognition(String name, float confidence) {
             this.name = name;
-            this.confidence = confidence;
+            this.confidence = confidence*100;
         }
 
         public String getName() {
@@ -212,7 +212,7 @@ public class ImageClassifier {
         public String toString() {
             return "Recognition{" +
                     "name='" + name + '\'' +
-                    ", confidence=" + confidence +
+                    ", confidence=" + confidence*100 +
                     '}';
         }
 
