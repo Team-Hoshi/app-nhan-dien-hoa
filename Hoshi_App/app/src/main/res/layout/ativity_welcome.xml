@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:text="Ứng dụng phân loại hoa dựa vào hình ảnh"
+            android:text="Ứng dụng nhận diện hoa dựa vào hình ảnh"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:textColor="#F38966"
